@@ -1,4 +1,4 @@
-package com.project.santak;
+package com.project.santak.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +18,7 @@ public class Pigmentos {
     private String PNome;
     private String PMarca;
     private String PProduto;
-    private String PFormula;
+    private String PMedida;
 
     public String getPNome() {
         return PNome;
@@ -60,11 +60,11 @@ public class Pigmentos {
         this.PProduto = PProduto;
     }
 
-    public String getPFormula() {
-        return PFormula;
+    public String getPMedida() {
+        return PMedida;
     }
 
-    public void setPFormula(String PFormula) {
-        this.PFormula = PFormula;
+    public void setPMedida(String PMedida) {
+        this.PMedida = PMedida;
     }
 }

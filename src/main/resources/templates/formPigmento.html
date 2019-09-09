@@ -41,8 +41,28 @@
                             <input type="text" id="marca" name="marca">
                         </div>
                         <div class="input-field col s6">
-                            <label for="marca">Marca:</label>
-                            <input type="text" id="marca" name="marca">
+                            <select name="produto" id="produto">
+                                <option value="" disabled selected>Produto</option>
+                                <option value="t_semibrilho">Tinta Semi Brilho</option>
+                                <option value="t_standard">Tinta Standard</option>
+                                <option value="selador">Selador</option>
+                                <option value="textura">Textura</option>
+                                <option value="grafiato">Grafiato</option>
+                                <option value="piso">Piso</option>
+                                <option value="telha">Telha</option>
+                                <option value="e_bescura">Esmalte B. Escura</option>
+                                <option value="e_aqua">Esmalte Aqua</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s6">
+                            <select name="medida" id="medida">
+                                <option value="" disabled selected>Medida</option>
+                                <option value="225ml">225ml</option>
+                                <option value="900ml">900ml</option>
+                                <option value="3.6L">3.6L</option>
+                                <option value="14L">14L</option>
+                                <option value="18L">18L</option>
+                            </select>
                         </div>
                     </div>
                     <button class="btn waves-effect waves-red red darken-1" type="submit" name="button">Cadastrar</button>
@@ -84,6 +104,12 @@
     </footer>
 
     <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    </script>
 </body>
 </html>

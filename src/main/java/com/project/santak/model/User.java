@@ -1,4 +1,4 @@
-package com.project.santak;
+package com.project.santak.model;
 
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
