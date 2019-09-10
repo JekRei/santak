@@ -5,6 +5,7 @@ import com.project.santak.repository.PigmentosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PigmentosController {
@@ -29,5 +30,14 @@ public class PigmentosController {
         pig.save(pigmento);
 
         return "cadastrarPigmento";
+    }
+
+    @RequestMapping(value="/pigmentos")
+    public ModelAndView listaPigmentos(){
+        ModelAndView mv = new ModelAndView("pigmentos");
+        Iterable<Pigmentos> pigmento = pig.findAll();
+        mv.addObject("pigmentos", pigmento);
+
+        return mv;
     }
 }
