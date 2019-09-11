@@ -19,7 +19,7 @@ public class PigmentosController {
     }
 
     @RequestMapping(value="/cadastrarPigmento", method=RequestMethod.POST)
-    public @ResponseBody String formPigmento(@RequestParam String nome, @RequestParam String cod, @RequestParam String marca, @RequestParam String produto, @RequestParam String medida){
+    public String formPigmento(@RequestParam String nome, @RequestParam String cod, @RequestParam String marca, @RequestParam String produto, @RequestParam String medida){
 
         Pigmentos pigmento = new Pigmentos();
         pigmento.setPNome(nome);
@@ -29,7 +29,7 @@ public class PigmentosController {
         pigmento.setPMedida(medida);
         pig.save(pigmento);
 
-        return "cadastrarPigmento";
+        return "redirect:/cadastrarPigmento";
     }
 
     @RequestMapping(value="/pigmentos")
