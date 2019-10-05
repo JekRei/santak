@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 @Entity
-public class Pigmentos {
+public class Produtos {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -17,7 +17,7 @@ public class Pigmentos {
     private String PCod;
     private String PNome;
     private String PMarca;
-    private String PProduto;
+    private String PMaterial;
     private String PMedida;
 
     public String getPNome() {
@@ -52,12 +52,12 @@ public class Pigmentos {
         Pid = pid;
     }
 
-    public String getPProduto() {
-        return PProduto;
+    public String getPMaterial() {
+        return PMaterial;
     }
 
-    public void setPProduto(String PProduto) {
-        this.PProduto = PProduto;
+    public void setPMaterial(String PMaterial) {
+        this.PMaterial = PMaterial;
     }
 
     public String getPMedida() {
