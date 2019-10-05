@@ -8,31 +8,61 @@ import javax.validation.constraints.NotEmpty;
 
 public class User implements Serializable {
 
-    private String UNome;
-    private String USenha;
-    private String UMail;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private long id;
 
-    public String getUNome() {
-        return UNome;
+    private String nome;
+    private String senha;
+    private String mail;
+    private String fone;
+    private boolean admin;
+
+    public long getId() {
+        return id;
     }
 
-    public void setUNome(String UNome) {
-        this.UNome = UNome;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getUSenha() {
-        return USenha;
+    public String getNome() {
+        return nome;
     }
 
-    public void setUSenha(String USenha) {
-        this.USenha = USenha;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getUMail() {
-        return UMail;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setUMail(String UMail) {
-        this.UMail = UMail;
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getFone() {
+        return fone;
+    }
+
+    public void setFone(String fone) {
+        this.fone = fone;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 }
