@@ -1,11 +1,19 @@
 package com.project.santak.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.validation.constraints.NotEmpty;
 
+//@Data
+//@EqualsAndHashCode(exclude = "produtos")
+
+@Entity
 public class User implements Serializable {
 
     @Id
@@ -18,6 +26,11 @@ public class User implements Serializable {
     private String fone;
     private boolean admin;
 
+//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+//    private Set<Produto> produtos;
+
+
+    //id
     public long getId() {
         return id;
     }
@@ -26,6 +39,7 @@ public class User implements Serializable {
         this.id = id;
     }
 
+    //nome
     public String getNome() {
         return nome;
     }
@@ -34,6 +48,7 @@ public class User implements Serializable {
         this.nome = nome;
     }
 
+    //senha
     public String getSenha() {
         return senha;
     }
@@ -42,6 +57,7 @@ public class User implements Serializable {
         this.senha = senha;
     }
 
+    //email
     public String getMail() {
         return mail;
     }
@@ -50,6 +66,7 @@ public class User implements Serializable {
         this.mail = mail;
     }
 
+    //fone
     public String getFone() {
         return fone;
     }
@@ -58,6 +75,7 @@ public class User implements Serializable {
         this.fone = fone;
     }
 
+    //admin
     public boolean isAdmin() {
         return admin;
     }

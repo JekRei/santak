@@ -1,6 +1,6 @@
 package com.project.santak.controller;
 
-import com.project.santak.model.Produtos;
+import com.project.santak.model.Produto;
 import com.project.santak.repository.ProdutosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,21 +21,19 @@ public class ProdutosController {
     @RequestMapping(value="/cadastrarProduto", method=RequestMethod.POST)
     public String formProduto(@RequestParam String nome, @RequestParam String cod, @RequestParam String marca, @RequestParam String material, @RequestParam String medida){
 
-        Produtos produto = new Produtos();
-        produto.setPNome(nome);
-        produto.setPCod(cod);
-        produto.setPMarca(marca);
-        produto.setPMaterial(material);
-        produto.setPMedida(medida);
+        Produto produto = new Produto();
+        produto.setnome(nome);
+        produto.setcod(cod);
+        produto.setmarca(marca);
         pig.save(produto);
 
         return "redirect:/cadastrarProduto";
     }
 
-    @RequestMapping(value="/produtos")
-    public ModelAndView listaPigmentos(){
+    @RequestMapping(value="/Produtos")
+    public ModelAndView listaProduto(){
         ModelAndView mv = new ModelAndView("produtos");
-        Iterable<Produtos> produto = pig.findAll();
+        Iterable<Produto> produto = pig.findAll();
         mv.addObject("produtos", produto);
 
         return mv;

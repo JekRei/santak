@@ -1,16 +1,26 @@
 package com.project.santak.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-public class Materiais {
+import javax.persistence.*;
+import java.util.Set;
+
+//@Data
+//@EqualsAndHashCode(exclude = "produtos")
+
+@Entity
+@Table(name="materiais")
+public class Material {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
     private String nome;
+
+//    @OneToMany(mappedBy = "materiais", cascade = CascadeType.ALL)
+//    private Set<Produto> produtos;
 
     public long getId() {
         return id;
