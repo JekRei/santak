@@ -65,6 +65,10 @@
                                 <option value="18L">18L</option>
                             </select>
                         </div>
+                        <div class="input-field col s6" th:each="pigmento:${pigmentos}">
+                            <label for="pigmento" th:each="${pigmento.nome}"></label>
+                            <input type="text" id="pigmento" name="pigmento">
+                        </div>
                     </div>
                     <button class="btn waves-effect waves-red red darken-1" type="submit" name="button">Cadastrar</button>
                 </form>

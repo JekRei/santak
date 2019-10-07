@@ -57,8 +57,27 @@ public class Produto {
 
     public void setid(long id) { id = id; }
 
-//    //material
-//    public Material getmaterial() { return material; }
-//
-//    public void setmaterial(Material material) { this.material = material; }
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public long getMaterial_id() {
+        return material_id;
+    }
+
+    public void setMaterial_id(long material_id) {
+        this.material_id = material_id;
+    }
+
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
 }
