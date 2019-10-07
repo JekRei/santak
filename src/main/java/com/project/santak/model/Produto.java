@@ -38,24 +38,24 @@ public class Produto {
 //    private Set<ProdutoHasPigmento> produtoHasPigmentos;
 
     //nome
-    public String getnome() { return nome; }
+    public String getNome() { return nome; }
 
-    public void setnome(String nome) { this.nome = nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
     //cod
-    public String getcod() { return cod; }
+    public String getCod() { return cod; }
 
-    public void setcod(String cod) { this.cod = cod; }
+    public void setCod(String cod) { this.cod = cod; }
 
     //marca
-    public String getmarca() { return marca; }
+    public String getMarca() { return marca; }
 
-    public void setmarca(String marca) { this.marca = marca; }
+    public void setMarca(String marca) { this.marca = marca; }
 
     //id
-    public long getid() { return id; }
+    public long getId() { return id; }
 
-    public void setid(long id) { id = id; }
+    public void setId(long id) { id = id; }
 
     public String getCor() {
         return cor;

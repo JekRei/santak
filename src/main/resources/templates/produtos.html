@@ -14,8 +14,8 @@
 <nav class="red" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Santak</a>
         <ul class="right hide-on-med-and-down ">
-            <li><a href="/cadastrarProduto">Cadastrar Pigmento</a></li>
-            <li><a href="/produtos">Pigmentos</a></li>
+            <li><a href="/cadastrarProduto">Cadastrar Produto</a></li>
+            <li><a href="/produtos">Produtos</a></li>
         </ul>
         <ul id="nav-mobile" class="sidenav">
             <li><a href="#">Navbar Link</a></li>
@@ -39,10 +39,10 @@
             </thead>
             <tbody>
                 <tr th:each="produto:${produtos}">
-                    <td><span th:text="${produto.PNome}"></span></td>
-                    <td><span th:text="${produto.PMarca}"></span></td>
-                    <td><span th:text="${produto.PMaterial}"></span></td>
-                    <td><span th:text="${produto.PMedida}"></span></td>
+                    <td><span th:text="${produto.getNome()}"></span></td>
+                    <td><span th:text="${produto.getMarca()}"></span></td>
+                    <td><span th:text="${produto.getCod()}"></span></td>
+                    <td><span th:text="${produto.getCor()}"></span></td>
                 </tr>
             </tbody>
         </table>

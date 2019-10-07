@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PigmentoController {
@@ -25,5 +26,14 @@ public class PigmentoController {
         pigmento.setNome(nome);
         pig.save(pigmento);
         return "redirect:/cadastrarPigmento";
+    }
+
+    @RequestMapping(value="/cadastrarProduto")
+    public ModelAndView listaPigmento(){
+        ModelAndView mv = new ModelAndView("pigmentos");
+        Iterable<Pigmento> produto = pig.findAll();
+        mv.addObject("pigmentos", produto);
+
+        return mv;
     }
 }

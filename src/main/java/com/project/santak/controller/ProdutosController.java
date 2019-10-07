@@ -22,15 +22,16 @@ public class ProdutosController {
     public String formProduto(@RequestParam String nome, @RequestParam String cod, @RequestParam String marca, @RequestParam String material, @RequestParam String medida){
 
         Produto produto = new Produto();
-        produto.setnome(nome);
-        produto.setcod(cod);
-        produto.setmarca(marca);
+        produto.setNome(nome);
+        produto.setCod(cod);
+        produto.setMarca(marca);
+        produto.setUser_id(0);
         pig.save(produto);
 
         return "redirect:/cadastrarProduto";
     }
 
-    @RequestMapping(value="/Produtos")
+    @RequestMapping(value="/produtos")
     public ModelAndView listaProduto(){
         ModelAndView mv = new ModelAndView("produtos");
         Iterable<Produto> produto = pig.findAll();
