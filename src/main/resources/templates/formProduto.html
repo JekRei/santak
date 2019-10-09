@@ -30,8 +30,8 @@
                 <form class="container" method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome">
+                            <label for="cor">Cor:</label>
+                            <input type="text" id="cor" name="cor">
                         </div>
                         <div class="input-field col s6">
                             <label for="cod">Código:</label>
@@ -44,15 +44,15 @@
                         <div class="input-field col s6">
                             <select name="material" id="material">
                                 <option value="" disabled selected>Material</option>
-                                <option value="Tinta Semi Brilho">Tinta Semi Brilho</option>
-                                <option value="Tinta Standard">Tinta Standard</option>
-                                <option value="Selador">Selador</option>
-                                <option value="Textura">Textura</option>
-                                <option value="Grafiato">Grafiato</option>
-                                <option value="Piso">Piso</option>
-                                <option value="Telha">Telha</option>
-                                <option value="Esmalte B. Escura">Esmalte B. Escura</option>
-                                <option value="Esmalte Aqua">Esmalte Aqua</option>
+                                <option value="1">Tinta Semi Brilho</option>
+                                <option value="2">Tinta Standard</option>
+                                <option value="3">Selador</option>
+                                <option value="4">Textura</option>
+                                <option value="5">Grafiato</option>
+                                <option value="6">Piso</option>
+                                <option value="7">Telha</option>
+                                <option value="8">Esmalte B. Escura</option>
+                                <option value="9">Esmalte Aqua</option>
                             </select>
                         </div>
                         <div class="input-field col s6">
@@ -65,10 +65,36 @@
                                 <option value="18L">18L</option>
                             </select>
                         </div>
-                        <div class="input-field col s6" th:each="pigmento:${pigmentos}">
-                            <label for="pigmento"><span th:each="${pigmento.getNome()}"></span></label>
-                            <input type="text" id="pigmento" name="pigmento">
+
+                        <div class="input-field col s12">
+                            <label for="red">Vermelho:</label>
+                            <input type="text" id="red" name="red">
                         </div>
+                        <div class="input-field col s6">
+                            <label for="yellow">Amarelo:</label>
+                            <input type="text" id="yellow" name="yellow">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="blue">Azul:</label>
+                            <input type="text" id="blue" name="blue">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="ocre">Ocre:</label>
+                            <input type="text" id="ocre" name="ocre">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="black">Preto:</label>
+                            <input type="text" id="black" name="black">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="rust_red">Verm.Oxido:</label>
+                            <input type="text" id="rust_red" name="rust_red">
+                        </div>
+                        <div class="input-field col s6">
+                            <label for="green">Verde:</label>
+                            <input type="text" id="green" name="green">
+                        </div>
+
                     </div>
                     <button class="btn waves-effect waves-red red darken-1" type="submit" name="button">Cadastrar</button>
                 </form>

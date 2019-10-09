@@ -16,14 +16,6 @@ public class ProdutoHasPigmento {
     private long produto_id;
     private long pigmento_id;
 
-//    @ManyToOne
-//    @JoinColumn
-//    private Produto produto;
-//
-//    @ManyToOne
-//    @JoinColumn
-//    private Pigmento pigmento;
-
     private String volume;
     private String qtd;
 

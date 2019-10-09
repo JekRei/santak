@@ -31,21 +31,13 @@
         <table>
             <thead>
             <tr>
-                <th>Cor</th>
-                <th>Marca</th>
-                <th>Código</th>
-                <th>Medida</th>
-                <th></th>
+                <th>Nome</th>
             </tr>
             </thead>
             <tbody>
-                <tr th:each="produto:${produtos}">
-                    <td><a th:href="${(#mvc.url('PC#detalhesProduto').arg(0, produto.getId())).build()}"><span th:text="${produto.getCor()}"></span></td>
-                    <td><span th:text="${produto.getMarca()}"></span></td>
-                    <td><span th:text="${produto.getCod()}"></span></td>
-                    <td><span th:text="${produto.getMedida()}"></span></td>
-                    <td><a class="btn-small waves-effect waves-red red darken-1 " th:href="${(#mvc.url('PC#deletarProduto').arg(0, produto.getId())).build()}"><i class="material-icons">delete</i></td>
-                </tr>
+            <tr th:each="pigmento:${pigmentos}">
+                <td><span th:text="${pigmento.getNome()}"></span></td>
+            </tr>
             </tbody>
         </table>
         <br><br>

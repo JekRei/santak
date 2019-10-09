@@ -28,11 +28,11 @@ public class PigmentoController {
         return "redirect:/cadastrarPigmento";
     }
 
-    @RequestMapping(value="/cadastrarProduto")
+    @RequestMapping(value="/pigmentos")
     public ModelAndView listaPigmento(){
         ModelAndView mv = new ModelAndView("pigmentos");
-        Iterable<Pigmento> produto = pig.findAll();
-        mv.addObject("pigmentos", produto);
+        Iterable<Pigmento> pigmento = pig.findAll();
+        mv.addObject("pigmentos", pigmento);
 
         return mv;
     }

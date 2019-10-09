@@ -27,25 +27,29 @@
 <div class="section no-pad-bot">
     <div class="container">
         <br><br>
-        <h1 class="header center red-text text-darken-1">Lista de Produtos</h1>
+        <h1 class="header center red-text text-darken-1">Pigmentos</h1>
         <table>
             <thead>
             <tr>
-                <th>Cor</th>
-                <th>Marca</th>
-                <th>Código</th>
-                <th>Medida</th>
-                <th></th>
+                <th>Vermelho</th>
+                <th>Amarelo</th>
+                <th>Azul</th>
+                <th>Ocre</th>
+                <th>Preto</th>
+                <th>Verm. Óxido</th>
+                <th>Verde</th>
             </tr>
             </thead>
             <tbody>
-                <tr th:each="produto:${produtos}">
-                    <td><a th:href="${(#mvc.url('PC#detalhesProduto').arg(0, produto.getId())).build()}"><span th:text="${produto.getCor()}"></span></td>
-                    <td><span th:text="${produto.getMarca()}"></span></td>
-                    <td><span th:text="${produto.getCod()}"></span></td>
-                    <td><span th:text="${produto.getMedida()}"></span></td>
-                    <td><a class="btn-small waves-effect waves-red red darken-1 " th:href="${(#mvc.url('PC#deletarProduto').arg(0, produto.getId())).build()}"><i class="material-icons">delete</i></td>
-                </tr>
+            <tr th:each="produto:${produto}">
+                <td><span th:text="${produto.getRed()}"></span></td>
+                <td><span th:text="${produto.getYellow()}"></span></td>
+                <td><span th:text="${produto.getBlue()}"></span></td>
+                <td><span th:text="${produto.getOcre()}"></span></td>
+                <td><span th:text="${produto.getBlack()}"></span></td>
+                <td><span th:text="${produto.getRust_red()}"></span></td>
+                <td><span th:text="${produto.getGreen()}"></span></td>
+            </tr>
             </tbody>
         </table>
         <br><br>

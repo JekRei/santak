@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class ProdutosController {
 
@@ -19,12 +20,23 @@ public class ProdutosController {
     }
 
     @RequestMapping(value="/cadastrarProduto", method=RequestMethod.POST)
-    public String formProduto(@RequestParam String nome, @RequestParam String cod, @RequestParam String marca, @RequestParam String material, @RequestParam String medida){
+    public String formProduto(@RequestParam String cor, @RequestParam String cod, @RequestParam String marca, @RequestParam int material, @RequestParam String medida, @RequestParam String red, @RequestParam String yellow, @RequestParam String blue, @RequestParam String ocre, @RequestParam String black, @RequestParam String rust_red, @RequestParam String green){
 
         Produto produto = new Produto();
-        produto.setNome(nome);
+        produto.setCor(cor);
         produto.setCod(cod);
         produto.setMarca(marca);
+        produto.setMaterial_id(material);
+        produto.setMedida(medida);
+
+        produto.setRed(red);
+        produto.setYellow(yellow);
+        produto.setBlue(blue);
+        produto.setOcre(ocre);
+        produto.setBlack(black);
+        produto.setRust_red(rust_red);
+        produto.setGreen(green);
+
         produto.setUser_id(0);
         pig.save(produto);
 
@@ -39,4 +51,21 @@ public class ProdutosController {
 
         return mv;
     }
+
+    @RequestMapping(value = "/{id}")
+    public ModelAndView detalhesProduto(@PathVariable("id") long id){
+        ModelAndView mv = new ModelAndView("detalhesProduto");
+        Produto produto = pig.findById(id);
+        mv.addObject("produto", produto);
+
+        return mv;
+    }
+
+    @RequestMapping(value = "/deletar")
+    public String deletarProduto(long id){
+        Produto produto = pig.findById(id);
+        pig.delete(produto);
+        return "redirect:/produtos";
+    }
+
 }
