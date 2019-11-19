@@ -67,5 +67,4 @@ public class ProdutosController {
         pig.delete(produto);
         return "redirect:/produtos";
     }
-
 }

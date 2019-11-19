@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr"
+      xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <meta charset="UTF-8">
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <nav class="red" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Santak</a>
+            <ul class="right hide-on-med-and-down ">
+                <li><a href="/cadastrarProduto">Produtos</a></li>
+                <li><a href="/produtos"></a>Entrar</li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="section no-pad-bot">
+        <br><br>
+            <h1 class="header center red-text text-darken-1">Acessar Conta</h1>
+            <div class="nav-wrapper">
+                <form class="container" method="post">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="cor">Coloque seu email:</label>
+                            <input type="text" id="cor" name="cor">
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="cod">Coloque sua senha:</label>
+                            <input type="text" id="cod" name="cod">
+                        </div>
+
+                    </div>
+                    <div class="input-field col s12">
+                        <button class="btn waves-effect waves-red red darken-1 col s12" type="submit" name="button">Entrar</button>
+                    </div>
+                    <div class="input-field col s6 m6 l6">
+                        <p class="margin right-align medium-small"><a href="#">Forgot password?</a></p>
+                    </div>
+                    <button class="btn waves-effect waves-red red darken-1" type="submit" name="button">Entrar</button>
+                </form>
+            </div>
+        <br><br>
+    </div>
+
+    <footer class="page-footer red lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s6">
+                    <h5 class="white-text">Sobre Santak</h5>
+                    <p class="white-text">Nós somos uma empresa independente que está ciente das dificuldades enfrentadas pelos pequenos comércios de tinta. Agradecemos o uso de nossos serviços e esperamos que esteja satisfeito!</p>
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Contatos</h5>
+                    <ul>
+                        <li>Telefone: <a class="white-text"></a>95555-5555</li>
+                        <li>Email: <a class="white-text" href="#">santak_contato@gmail.com</a></li>
+                        <li>Facebook: <a class="white-text" href="#">Santak</a></li>
+                    </ul>
+                </div>
+                <div class="col l2 s12">
+                    <h5 class="white-text">Informações</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Termos de Uso</a></li>
+                        <li><a class="white-text" href="#!">Privacidade</a></li>
+                        <li><a class="white-text" href="#!"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 - 2019 Santak, Inc.
+            </div>
+        </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('select').formSelect();
+        });
+    </script>
+</body>
+</html>
