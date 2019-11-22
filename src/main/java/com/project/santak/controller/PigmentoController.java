@@ -1,4 +1,4 @@
-package com.project.santak.controller;
+/*package com.project.santak.controller;
 
 import com.project.santak.model.Pigmento;
 import com.project.santak.repository.PigmentosRepository;
@@ -37,3 +37,4 @@ public class PigmentoController {
         return mv;
     }
 }
+*/

@@ -2,20 +2,19 @@ package com.project.santak.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.validation.constraints.NotEmpty;
 
 //@Data
 //@EqualsAndHashCode(exclude = "produtos")
 
 @Entity
-public class Usuario implements UserDetails, Serializable {
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -27,13 +26,13 @@ public class Usuario implements UserDetails, Serializable {
     private String fone;
 
     @ManyToMany
-    @JoinTable(
-            name = "usuarios_roles",
+    @JoinTable(name = "usuarios_roles",
             joinColumns = @JoinColumn(
                     name = "usuario_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private List<Role> roles;
+
 
     //id
     public long getId() {
@@ -80,10 +79,18 @@ public class Usuario implements UserDetails, Serializable {
         this.fone = fone;
     }
 
+    //roles
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return (Collection<? extends GrantedAuthority>) this.roles;
-
+        return this.roles;
     }
 
     @Override

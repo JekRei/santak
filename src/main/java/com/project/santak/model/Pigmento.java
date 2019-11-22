@@ -1,4 +1,4 @@
-package com.project.santak.model;
+/*package com.project.santak.model;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -33,3 +33,4 @@ public class Pigmento {
         this.nome = nome;
     }
 }
+*/

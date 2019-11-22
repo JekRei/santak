@@ -6,16 +6,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
 
-    <meta charset="utf-8">
-
-    <title>Pigmentos</title>
+    <meta charset="UTF-8">
+    <title>Criar Conta</title>
 </head>
 <body>
 <nav class="red" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Santak</a>
         <ul class="right hide-on-med-and-down ">
-            <li><a href="/cadastrarProduto">Cadastrar Produto</a></li>
-            <li><a href="/produtos">Produtos</a></li>
+            <li><a href="/cadastrarProduto">Produtos</a></li>
+            <li><a href="/produtos">Perfil</a></li>
             <li><a href="/produtos">Sair</a></li>
         </ul>
         <ul id="nav-mobile" class="sidenav">
@@ -26,36 +25,35 @@
 </nav>
 
 <div class="section no-pad-bot">
-    <div class="container">
-        <br><br>
-        <h1 class="header center red-text text-darken-1">Pigmentos</h1>
-        <table>
-            <thead>
-            <tr>
-                <th>Vermelho</th>
-                <th>Amarelo</th>
-                <th>Azul</th>
-                <th>Ocre</th>
-                <th>Preto</th>
-                <th>Verm. Óxido</th>
-                <th>Verde</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr th:each="produto:${produto}">
-                    <td><span th:text="${produto.getRed()}"></span></td>
-                    <td><span th:text="${produto.getYellow()}"></span></td>
-                    <td><span th:text="${produto.getBlue()}"></span></td>
-                    <td><span th:text="${produto.getOcre()}"></span></td>
-                    <td><span th:text="${produto.getBlack()}"></span></td>
-                    <td><span th:text="${produto.getRust_red()}"></span></td>
-                    <td><span th:text="${produto.getGreen()}"></span></td>
-                    <td><a class="btn-small waves-effect waves-red red darken-1 "><i class="material-icons">update</i></td>
-                </tr>
-            </tbody>
-        </table>
-        <br><br>
+    <br><br>
+    <h1 class="header center red-text text-darken-1">Criar Conta</h1>
+    <div class="nav-wrapper">
+        <form class="container" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                </div>
+                <div class="input-field col s12">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="input-field col s12">
+                    <label for="fone">Telefone:</label>
+                    <input type="text" id="fone" name="fone">
+                </div>
+                <div class="input-field col s12">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha">
+                </div>
+
+            </div>
+            <div class="input-field col s12">
+                <button class="btn waves-effect waves-red red darken-1 col s12" type="submit" name="button">Cadastrar</button>
+            </div>
+        </form>
     </div>
+    <br><br>
 </div>
 
 <footer class="page-footer red lighten-1">
@@ -69,8 +67,8 @@
                 <h5 class="white-text">Contatos</h5>
                 <ul>
                     <li>Telefone: <a class="white-text"></a>95555-5555</li>
-                    <li>Email: <a class="white-text" href="#!">santak_contato@gmail.com</a></li>
-                    <li>Facebook: <a class="white-text" href="#!">Santak</a></li>
+                    <li>Email: <a class="white-text" href="#">santak_contato@gmail.com</a></li>
+                    <li>Facebook: <a class="white-text" href="#">Santak</a></li>
                 </ul>
             </div>
             <div class="col l2 s12">
@@ -91,6 +89,12 @@
 </footer>
 
 <!--  Scripts-->
-<script src="js/materialize.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+</script>
 </body>
 </html>
