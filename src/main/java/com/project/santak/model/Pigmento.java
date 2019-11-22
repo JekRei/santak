@@ -1,8 +1,4 @@
-package com.project.santak.model;
-
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+/*package com.project.santak.model;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -37,3 +33,4 @@ public class Pigmento {
         this.nome = nome;
     }
 }
+*/

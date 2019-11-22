@@ -1,7 +1,5 @@
 package com.project.santak.model;
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 //@Data

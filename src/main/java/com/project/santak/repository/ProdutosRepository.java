@@ -7,6 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
 @Repository
 public interface ProdutosRepository extends CrudRepository<Produto, String> {
    Produto findById(long id);
