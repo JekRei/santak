@@ -41,6 +41,26 @@
                         <i class="material-icons">close</i>
                     </div>
                 </form>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Cor</th>
+                        <th>Marca</th>
+                        <th>Código</th>
+                        <th>Medida</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="produto:${produtos}">
+                        <td><a th:href="${(#mvc.url('PC#detalhesProduto').arg(0, produto.getId())).build()}"><span th:text="${produto.getCor()}"></span></td>
+                        <td><span th:text="${produto.getMarca()}"></span></td>
+                        <td><span th:text="${produto.getCod()}"></span></td>
+                        <td><span th:text="${produto.getMedida()}"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br><br>
             </div>
         </nav>
         <br><br>
