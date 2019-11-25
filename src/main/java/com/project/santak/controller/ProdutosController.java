@@ -2,51 +2,43 @@ package com.project.santak.controller;
 
 import com.project.santak.model.Produto;
 import com.project.santak.repository.ProdutosRepository;
+import com.project.santak.services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 
 @Controller
 public class ProdutosController {
 
     @Autowired
-    ProdutosRepository pig;
+    private ProdutosRepository pig;
+
+    @Autowired
+    private ProdutoService proService;
 
     @RequestMapping(value="/cadastrarProduto", method=RequestMethod.GET)
-    public String formProduto(){
-        return "formProduto";
+    public ModelAndView formProduto(){
+        Produto produto = new Produto();
+
+        ModelAndView mv = new ModelAndView("formProduto");
+        mv.addObject("produto", produto);
+        return mv;
     }
 
-    @RequestMapping(value="/cadastrarProduto", method=RequestMethod.POST)
-    public String formProduto(@RequestParam String cor, @RequestParam String cod, @RequestParam String marca, @RequestParam int material, @RequestParam String medida, @RequestParam String red, @RequestParam String yellow, @RequestParam String blue, @RequestParam String ocre, @RequestParam String black, @RequestParam String rust_red, @RequestParam String green){
+    @RequestMapping(value="/salvarProduto", method=RequestMethod.POST)
+    public String salvarProduto(@ModelAttribute("produto") Produto produto){
+        proService.save(produto);
 
-        Produto produto = new Produto();
-        produto.setCor(cor);
-        produto.setCod(cod);
-        produto.setMarca(marca);
-        produto.setMaterial_id(material);
-        produto.setMedida(medida);
-
-        produto.setRed(red);
-        produto.setYellow(yellow);
-        produto.setBlue(blue);
-        produto.setOcre(ocre);
-        produto.setBlack(black);
-        produto.setRust_red(rust_red);
-        produto.setGreen(green);
-
-        produto.setUser_id(0);
-        pig.save(produto);
-
-        return "redirect:/cadastrarProduto";
+        return "redirect:/produtos";
     }
 
     @RequestMapping(value="/produtos")
     public ModelAndView listaProduto(){
         ModelAndView mv = new ModelAndView("produtos");
-        Iterable<Produto> produto = pig.findAll();
+        List<Produto> produto = proService.listAll();
         mv.addObject("produtos", produto);
 
         return mv;
@@ -57,14 +49,32 @@ public class ProdutosController {
         ModelAndView mv = new ModelAndView("detalhesProduto");
         Produto produto = pig.findById(id);
         mv.addObject("produto", produto);
+        return mv;
+    }
+
+    @RequestMapping(value = "/editarProduto/{id}", method = RequestMethod.GET)
+    public ModelAndView getProduto(@PathVariable(name = "id") Long id){
+        Produto produto = proService.get(id);
+
+        ModelAndView mv = new ModelAndView("editarProduto");
+        mv.addObject("produto", produto);
+        return mv;
+        //return formProduto(proService.findOne(id));
+    }
+
+    @RequestMapping(value = "/deletar_produto")
+    public String deletarProduto(Long id){
+        proService.delete(id);
+        return "redirect:/produtos";
+    }
+
+    @RequestMapping(value="/pesquisarProduto", method= RequestMethod.POST)
+    public ModelAndView pesquisarProduto(@RequestParam("nomep") String nomep){
+        ModelAndView mv = new ModelAndView("index");
+        List<Produto> produto = pig.findProdutoByCor(nomep);
+        mv.addObject("produtos", produto);
 
         return mv;
     }
 
-    @RequestMapping(value = "/deletar")
-    public String deletarProduto(long id){
-        Produto produto = pig.findById(id);
-        pig.delete(produto);
-        return "redirect:/produtos";
-    }
 }

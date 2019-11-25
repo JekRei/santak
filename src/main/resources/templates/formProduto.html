@@ -28,36 +28,36 @@
         <br><br>
             <h1 class="header center red-text text-darken-1">Cadastro de Produtos</h1>
             <div class="nav-wrapper">
-                <form class="container" method="post">
+                <form class="container"  action="#" th:action="@{/salvarProduto}" th:object="${produto}" method="post">
                     <div class="row">
                         <div class="input-field col s12">
                             <label for="cor">Cor:</label>
-                            <input type="text" id="cor" name="cor">
+                            <input type="text" id="cor" name="cor" th:field="*{cor}">
                         </div>
                         <div class="input-field col s6">
                             <label for="cod">Código:</label>
-                            <input type="text" id="cod" name="cod">
+                            <input type="text" id="cod" name="cod" th:field="*{cod}">
                         </div>
                         <div class="input-field col s6">
                             <label for="marca">Marca:</label>
-                            <input type="text" id="marca" name="marca">
+                            <input type="text" id="marca" name="marca" th:field="*{marca}">
                         </div>
                         <div class="input-field col s6">
-                            <select name="material" id="material">
+                            <select name="material" id="material" th:field="*{material}">
                                 <option value="" disabled selected>Material</option>
-                                <option value="1">Tinta Semi Brilho</option>
-                                <option value="2">Tinta Standard</option>
-                                <option value="3">Selador</option>
-                                <option value="4">Textura</option>
-                                <option value="5">Grafiato</option>
-                                <option value="6">Piso</option>
-                                <option value="7">Telha</option>
-                                <option value="8">Esmalte B. Escura</option>
-                                <option value="9">Esmalte Aqua</option>
+                                <option value="Tinta Semi Brilho">Tinta Semi Brilho</option>
+                                <option value="Tinta Standard">Tinta Standard</option>
+                                <option value="Selador">Selador</option>
+                                <option value="Textura">Textura</option>
+                                <option value="Grafiato">Grafiato</option>
+                                <option value="Piso">Piso</option>
+                                <option value="Telha">Telha</option>
+                                <option value="Esmalte B. Escura">Esmalte B. Escura</option>
+                                <option value="Esmalte Aqua">Esmalte Aqua</option>
                             </select>
                         </div>
                         <div class="input-field col s6">
-                            <select name="medida" id="medida">
+                            <select name="medida" id="medida" th:field="*{medida}">
                                 <option value="" disabled selected>Medida</option>
                                 <option value="225ml">225ml</option>
                                 <option value="900ml">900ml</option>
@@ -69,35 +69,36 @@
 
                         <div class="input-field col s12">
                             <label for="red">Vermelho:</label>
-                            <input type="text" id="red" name="red">
+                            <input type="text" id="red" name="red" th:field="*{red}">
                         </div>
                         <div class="input-field col s6">
                             <label for="yellow">Amarelo:</label>
-                            <input type="text" id="yellow" name="yellow">
+                            <input type="text" id="yellow" name="yellow" th:field="*{yellow}">
                         </div>
                         <div class="input-field col s6">
                             <label for="blue">Azul:</label>
-                            <input type="text" id="blue" name="blue">
+                            <input type="text" id="blue" name="blue" th:field="*{blue}">
                         </div>
                         <div class="input-field col s6">
                             <label for="ocre">Ocre:</label>
-                            <input type="text" id="ocre" name="ocre">
+                            <input type="text" id="ocre" name="ocre" th:field="*{ocre}">
                         </div>
                         <div class="input-field col s6">
                             <label for="black">Preto:</label>
-                            <input type="text" id="black" name="black">
+                            <input type="text" id="black" name="black" th:field="*{black}">
                         </div>
                         <div class="input-field col s6">
                             <label for="rust_red">Verm.Oxido:</label>
-                            <input type="text" id="rust_red" name="rust_red">
+                            <input type="text" id="rust_red" name="rust_red" th:field="*{rust_red}">
                         </div>
                         <div class="input-field col s6">
                             <label for="green">Verde:</label>
-                            <input type="text" id="green" name="green">
+                            <input type="text" id="green" name="green" th:field="*{green}">
                         </div>
 
                     </div>
                     <button class="btn waves-effect waves-red red darken-1" type="submit" name="button">Cadastrar</button>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                 </form>
             </div>
         <br><br>

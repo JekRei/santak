@@ -8,14 +8,14 @@
 
     <meta charset="utf-8">
 
-    <title>Pigmentos</title>
+    <title>Funcionários</title>
 </head>
 <body>
 <nav class="red" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Santak</a>
         <ul class="right hide-on-med-and-down ">
             <li><a href="/cadastrarProduto">Cadastrar Produto</a></li>
-            <li><a href="/produtos">Produtos</a></li>
+            <li><a href="/produtos">Perfil</a></li>
             <li><a href="/produtos">Sair</a></li>
         </ul>
         <ul id="nav-mobile" class="sidenav">
@@ -28,31 +28,25 @@
 <div class="section no-pad-bot">
     <div class="container">
         <br><br>
-        <h1 class="header center red-text text-darken-1">Pigmentos</h1>
+        <h1 class="header center red-text text-darken-1">Funcionários</h1>
         <table>
             <thead>
             <tr>
-                <th>Vermelho</th>
-                <th>Amarelo</th>
-                <th>Azul</th>
-                <th>Ocre</th>
-                <th>Preto</th>
-                <th>Verm. Óxido</th>
-                <th>Verde</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
-                <tr th:each="produto:${produto}">
-                    <td><span th:text="${produto.getRed()}"></span></td>
-                    <td><span th:text="${produto.getYellow()}"></span></td>
-                    <td><span th:text="${produto.getBlue()}"></span></td>
-                    <td><span th:text="${produto.getOcre()}"></span></td>
-                    <td><span th:text="${produto.getBlack()}"></span></td>
-                    <td><span th:text="${produto.getRust_red()}"></span></td>
-                    <td><span th:text="${produto.getGreen()}"></span></td>
-                    <td><a class="btn-small waves-effect waves-red red darken-1 " th:href="@{'/editarProduto/' + ${produto.id}}"/><i class="material-icons">update</i></td>
-
-                </tr>
+            <tr th:each="usuario:${usuarios}">
+                <td><span th:text="${usuario.getNome()}"></span></td>
+                <td><span th:text="${usuario.getUsername()}"></span></td>
+                <td><span th:text="${usuario.getFone()}"></span></td>
+                <td><a class="btn-small waves-effect waves-red red darken-1" th:href="@{'/perfil/' + ${usuario.id}}"/><i class="material-icons">account_circle</i></td>
+                <td><a class="btn-small waves-effect waves-red red darken-1" th:href="${(#mvc.url('UC#deletarUsuario').arg(0, usuario.getId())).build()}"/><i class="material-icons">delete</i></td>
+            </tr>
             </tbody>
         </table>
         <br><br>

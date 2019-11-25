@@ -6,14 +6,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import java.util.Optional;
-import org.springframework.stereotype.Repository;
-import java.util.Optional;
+
+import java.util.List;
 
 @Repository
-public interface ProdutosRepository extends CrudRepository<Produto, String> {
+public interface ProdutosRepository extends JpaRepository<Produto, Long> {
    Produto findById(long id);
 
-   @Query("from Produto where cor like :search")
-   Iterable<Produto> findByName(@Param("search")String search);
+   @Query("select p from Produto p where p.cor like %?1%")
+   List<Produto> findProdutoByCor(String cor);
 }

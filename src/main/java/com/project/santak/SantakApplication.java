@@ -22,8 +22,5 @@ public class SantakApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SantakApplication.class, args);
-        System.out.print(new BCryptPasswordEncoder().encode("321"));
-
     }
-
 }

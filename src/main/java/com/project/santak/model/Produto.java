@@ -14,12 +14,13 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String cod;
     private String cor;
     private String marca;
     private String medida;
+    private String material;
 
     private String red;
     private String yellow;
@@ -29,8 +30,8 @@ public class Produto {
     private String rust_red;
     private String green;
 
-    private long material_id;
-    private long user_id;
+    //private long material_id;
+    //private long user_id;
 
 //    @ManyToOne
 //    @JoinColumn
@@ -55,9 +56,13 @@ public class Produto {
     public void setMarca(String marca) { this.marca = marca; }
 
     //id
-    public long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(long id) { id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCor() {
         return cor;
@@ -67,21 +72,21 @@ public class Produto {
         this.cor = cor;
     }
 
-    public long getMaterial_id() {
-        return material_id;
-    }
+    //public long getMaterial_id() {
+    //return material_id;
+    //}
 
-    public void setMaterial_id(long material_id) {
-        this.material_id = material_id;
-    }
+    //public void setMaterial_id(long material_id) {
+    //    this.material_id = material_id;
+    //}
 
-    public long getUser_id() {
-        return user_id;
-    }
+    //public long getUser_id() {
+    //    return user_id;
+    //}
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
-    }
+    //public void setUser_id(long user_id) {
+    //    this.user_id = user_id;
+    //}
 
     public String getMedida() {
         return medida;
@@ -145,5 +150,13 @@ public class Produto {
 
     public void setGreen(String green) {
         this.green = green;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
     }
 }

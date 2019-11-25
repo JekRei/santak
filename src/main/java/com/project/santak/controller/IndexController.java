@@ -12,22 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-    @Autowired
-    ProdutosRepository pig;
+    /*@Autowired
+    ProdutosRepository pig;*/
 
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String index(){
         return "index";
     }
 
-    @RequestMapping(value="/", method= RequestMethod.POST)
-    public ModelAndView listaProduto(@RequestParam String search){
-        System.out.println("teste 1");
-        ModelAndView mv = new ModelAndView("index");
-        Iterable<Produto> produtos = pig.findByName(search);
-        mv.addObject("index", produtos);
-
-        System.out.println("teste 4");
-        return mv;
-    }
 }
