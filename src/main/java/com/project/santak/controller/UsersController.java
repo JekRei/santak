@@ -33,7 +33,7 @@ public class UsersController {
         return mv;
     }
 
-    @RequestMapping(value = "/salvarContar", method = RequestMethod.POST)
+    @RequestMapping(value = "/salvarConta", method = RequestMethod.POST)
     public String salvarConta(@ModelAttribute("usuario") Usuario usuario){
         userService.saveUser(usuario);
 
